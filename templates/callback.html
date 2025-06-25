@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Microsoft OAuth Authentication</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        background-color: #f0f2f5;
+      }
+      .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .success {
+        color: #28a745;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      .info {
+        margin: 10px 0;
+        color: #666;
+      }
+      .token-info {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 4px;
+        margin: 15px 0;
+        font-family: monospace;
+        word-break: break-all;
+      }
+      .copy-button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .copy-button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="success">✓ Authentication Successful!</div>
+      <div class="info">
+        Authorization code has been successfully received, processing...
+      </div>
+      <div class="token-info">
+        <p>Token will be securely saved to the configuration file</p>
+        <p>
+          Authorization status: <span class="status">Getting Token...</span>
+        </p>
+        <p>Expiration time: <span class="expires-at">Processing...</span></p>
+        <p>Window will close in <span id="countdown">5</span> seconds</p>
+      </div>
+    </div>
+    <script>
+      let count = 5;
+      const countdownElement = document.getElementById("countdown");
+
+      setInterval(() => {
+        count--;
+        countdownElement.textContent = count;
+        if (count <= 0) {
+          window.close();
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>

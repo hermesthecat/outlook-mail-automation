@@ -1,0 +1,97 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "outlook-mail-automation"
+version = "1.0.0"
+description = "A Python-based automation tool for Microsoft Outlook email operations using Microsoft Graph API"
+readme = "README.md"
+requires-python = ">=3.6"
+license = {text = "MIT"}
+authors = [
+    {name = "Outlook Mail Automation Developer", email = "developer@example.com"}
+]
+maintainers = [
+    {name = "Outlook Mail Automation Developer", email = "developer@example.com"}
+]
+keywords = ["outlook", "email", "automation", "microsoft", "graph", "api", "oauth2"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Communications :: Email",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Office/Business",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "requests>=2.25.0",
+    "DrissionPage>=4.0.0",
+    "configparser>=5.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "black>=21.0",
+    "flake8>=3.8",
+    "mypy>=0.800",
+]
+
+[project.scripts]
+outlook-auth = "get_refresh_token:main"
+outlook-mail = "mail_api:main"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/outlook-mail-automation"
+Documentation = "https://github.com/yourusername/outlook-mail-automation/blob/main/README.md"
+Repository = "https://github.com/yourusername/outlook-mail-automation"
+"Bug Reports" = "https://github.com/yourusername/outlook-mail-automation/issues"
+
+[tool.setuptools]
+packages = ["outlook_mail_automation"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"*" = ["templates/*.html", "*.txt"]
+
+[tool.black]
+line-length = 88
+target-version = ['py36']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.mypy]
+python_version = "3.6"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --strict-markers"
+testpaths = [
+    "tests",
+] 
