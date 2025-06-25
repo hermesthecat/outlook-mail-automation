@@ -26,11 +26,11 @@ A Python-based automation tool for Microsoft Outlook email operations using Micr
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/outlook-mail-automation.git
+git clone https://github.com/hermesthecat/outlook-mail-automation.git
 cd outlook-mail-automation
 ```
 
-2. Run the automatic installation script:
+1. Run the automatic installation script:
 
 ```bash
 python install.py
@@ -49,23 +49,23 @@ This will automatically:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/outlook-mail-automation.git
+git clone https://github.com/hermesthecat/outlook-mail-automation.git
 cd outlook-mail-automation
 ```
 
-2. Install required packages:
+1. Install required packages:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Or install manually:
+   **Alternative method:**
 
-```bash
-pip install requests DrissionPage
-```
+   ```bash
+   pip install requests DrissionPage
+   ```
 
-3. Install the package:
+1. Install the package:
 
 ```bash
 pip install -e .
@@ -85,7 +85,7 @@ pip install outlook-mail-automation
    - Add required permissions (Mail.ReadWrite, Mail.Send, User.Read)
    - Set redirect URI to `http://localhost:8000/`
 
-2. Create `config.txt` file with your application credentials:
+1. Create `config.txt` file with your application credentials:
 
 ```ini
 [microsoft]
@@ -105,7 +105,7 @@ If you installed the package using `pip install -e .` or `python install.py`, yo
 outlook-auth
 ```
 
-2. Test email operations:
+1. Test email operations:
 
 ```bash
 outlook-mail
@@ -119,7 +119,7 @@ outlook-mail
 python get_refresh_token.py
 ```
 
-2. After authentication, use the mail API:
+1. After authentication, use the mail API:
 
 ```python
 from mail_api import EmailClient

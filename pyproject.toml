@@ -53,10 +53,10 @@ outlook-auth = "get_refresh_token:main"
 outlook-mail = "mail_api:main"
 
 [project.urls]
-Homepage = "https://github.com/yourusername/outlook-mail-automation"
-Documentation = "https://github.com/yourusername/outlook-mail-automation/blob/main/README.md"
-Repository = "https://github.com/yourusername/outlook-mail-automation"
-"Bug Reports" = "https://github.com/yourusername/outlook-mail-automation/issues"
+Homepage = "https://github.com/hermesthecat/outlook-mail-automation"
+Documentation = "https://github.com/hermesthecat/outlook-mail-automation/blob/main/README.md"
+Repository = "https://github.com/hermesthecat/outlook-mail-automation"
+"Bug Reports" = "https://github.com/hermesthecat/outlook-mail-automation/issues"
 
 [tool.setuptools]
 packages = ["outlook_mail_automation"]
